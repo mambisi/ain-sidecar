@@ -18,7 +18,7 @@ async fn main() -> Result<(), NodeRunnerError> {
     let mut defi_node = Arc::new(DefiNode::new(
         DEFI_IMAGE.to_string(),
         Some("defi-node".to_string()),
-        "./host/defi-data",
+        "defi-data" //TODO: change to use cli args,
     ));
     let _ = defi_node.start().await?;
     tokio::time::sleep(Duration::from_secs(20)).await;

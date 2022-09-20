@@ -137,33 +137,7 @@ impl DefiNode {
         Ok(blockcount)
     }
 
-    // pub async fn rollback(&self, block_height : i64) -> Result<i64, NodeRunnerError> {
-    //     let docker = Docker::connect_with_socket_defaults()?;
-    //     let exec = docker
-    //         .create_exec(
-    //             self.cname.as_str(),
-    //             CreateExecOptions {
-    //                 attach_stdout: Some(true),
-    //                 attach_stderr: Some(true),
-    //                 cmd: Some(vec!["defi-cli", "getblockcount"]),
-    //                 ..Default::default()
-    //             },
-    //         )
-    //         .await?
-    //         .id;
-    //
-    //     let mut output = if let StartExecResults::Attached { mut output, .. } =
-    //         docker.start_exec(&exec, None).await?
-    //     {
-    //         output
-    //     } else {
-    //        return Err(NodeRunnerError::FailedToExec)
-    //     };
-    //     let out = output.next().await.ok_or(NodeRunnerError::FailedToExec)??;
-    //     let value : Value = serde_json::from_str(&out.to_string())?;
-    //     let blockcount = value.as_i64()
-    //         .ok_or(NodeRunnerError::ParseError)?;
-    //     Ok(blockcount)
+    // pub async fn rollback(&self, block_height : i64) -> Result<(), NodeRunnerError> {
     // }
 
     pub async fn remove(&self) -> Result<(), NodeRunnerError> {
