@@ -1,0 +1,22 @@
+[package]
+name = "ain-sidecar"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bollard = "0.13"
+thiserror = "1"
+tokio = { version = "1.12", features = ["full"] }
+fs_extra = "1.2"
+chrono = "0.4"
+clap = "3.2.21"
+futures-util = "0.3.24"
+termion = "1.5.6"
+tracing = "0.1"
+tokio-scoped = "0.2.0"
+bitcoin-rpc = "0.2.0"
+tracing-subscriber = "0.3"
+serde = {version = "1"}
+serde_json = {version = "1"}
